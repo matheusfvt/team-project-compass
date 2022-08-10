@@ -12,10 +12,6 @@
     <title>TEAM PROJECT</title>
   </head>
   <body>
-    terceiro commit
-    TESTANDO 2
-    TESTANDO AGORA
-    TESTANDO
     <section id="container">
       <div class="container__box">
         <h1 class="container__title">Team Sign Up</h1>
@@ -23,7 +19,7 @@
         <div class="container__navigation">
           <button class="button bto-active">Basic</button>
           <button class="button">Social</button>
-          <button class="button">Cerificates</button>
+          <button class="button">Certificates</button>
         </div>
 
         <div class="container__page active" id="first-page">
@@ -35,11 +31,14 @@
           <input type="text" class="input full" id="info-nickname" placeholder="Juanito" />
 
           <div class="container__phone-email">
-            <label class="input-label" for="info-email">Email *</label>
-            <input type="email" class="input email" id="info-email" placeholder="foo@bar.com" />
-
-            <label class="input-label" for="info-phone">Phone</label>
-            <input type="number" class="input phone" id="info-phone" placeholder="(83) 00000-0000" />
+            <div class="container__email">
+              <label class="input-label" for="info-email">Email *</label>
+              <input type="email" class="input" id="info-email" placeholder="foo@bar.com" />
+            </div>
+            <div class="container__phone">
+              <label class="input-label" for="info-phone">Phone</label>
+              <input type="number" class="input" id="info-phone" placeholder="(83) 00000-0000" />
+            </div>
           </div>
           <form class="container__page__form-date">
             <p class="input-label input-label-big">Birthday *</p>
@@ -53,9 +52,7 @@
             </span>
             <span>
               <label class="input-label input-label-date" for="year">Year</label>
-              <select class="input" name="year" id="year">
-                Year:
-              </select>
+              <select class="input" name="year" id="year"></select>
             </span>
             <span>
               <label class="input-label input-label-date" for="age">Age</label>
