@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Nunito&display=swap" rel="stylesheet" />
+    <title>TEAM PROJECT</title>
+  </head>
+  <body>
+    <section id="container">
+      <div class="container__box">
+        <h1 class="container__title">Team Sign Up</h1>
+
+        <div class="container__navigation">
+          <button class="button bto-active">Basic</button>
+          <button class="button">Social</button>
+          <button class="button">Cerificates</button>
+        </div>
+
+        <div class="container__page active" id="first-page">
+            
+          <label class="input-label" for="info-name">Full Name *</label>
+          <input type="text" class="input full" id="info-name" placeholder="Foo Bar" />
+
+          <label class="input-label" for="info-nickname">Nickname</label>
+          <input type="text" class="input full" id="info-nickname" placeholder="Juanito" />
+
+          <div class="container__phone-email">
+            <label class="input-label" for="info-email">Email *</label>
+            <input type="email" class="input email" id="info-email" placeholder="foo@bar.com" />
+
+            <label class="input-label" for="info-phone">Phone</label>
+            <input type="number" class="input phone" id="info-phone" placeholder="(83) 00000-0000" />
+          </div>
+          <form class="container__page__form-date">
+            <p class="input-label input-label-big">Birthday *</p>
+            <span>
+              <label class="input-label input-label-date" for="day">Day</label>
+              <select class="input" name="day" id="day"></select>
+            </span>
+            <span>
+              <label class="input-label input-label-date" for="month">Month</label>
+              <select class="input" name="month" id="month"></select>
+            </span>
+            <span>
+              <label class="input-label input-label-date" for="year">Year</label>
+              <select class="input" name="year" id="year">
+                Year:
+              </select>
+            </span>
+            <span>
+              <label class="input-label input-label-date" for="age">Age</label>
+              <select class="input" name="age" id="age"></select>
+            </span>
+          </form>
+
+
+          <div class="container__page__checkbox">
+            <input type="checkbox" id="page__checkbox" />
+            <label for="page__checkbox" class="checkbox-label">I accept the terms and privacy</label>
+          </div>
+
+          <button class="button-primary next">Next<span class="arrow-right"></span></button>
+        </div>
+
+        <div class="page" id="second-page">
+          <label class="input-label" for="info-linkedin">LinkedIn</label>
+          <input type="url" class="input full" id="info-linkedin" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" />
+
+          <label class="input-label" for="info-github">Github *</label>
+          <input type="" class="input full" id="info-github" placeholder="https://github.com/foobar" />
+
+          <button class="button-primary next">Next</button>
+        </div>
+
+        <div id="third-page">
+          <label class="input-label" for="info-certificates">Cerficates</label>
+          <input type="url" class="input full" id="info-certificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" />
+          <span class="heart"></span>
+
+          <button class="button-primary more" id="">More</span></button>
+
+          <label class="input-label" for="info-teamName">Team Name *</label>
+          <input type="text" class="input full" id="info-teamName" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" />
+
+          <label class="input-label" for="info-institution">Institution *</label>
+          <input type="text" class="input full" id="info-institution" placeholder="Federal University of Paraiba" />
+
+          <label class="input-label" for="info-graduation">Graduation *</label>
+          <input type="text" class="input full" id="info-graduation" placeholder="Computer Science" />
+
+          <button class="button-primary finish">Finish</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
