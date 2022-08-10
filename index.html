@@ -23,7 +23,6 @@
         </div>
 
         <div class="container__page active" id="first-page">
-            
           <label class="input-label" for="info-name">Full Name *</label>
           <input type="text" class="input full" id="info-name" placeholder="Foo Bar" />
 
@@ -37,7 +36,7 @@
             </div>
             <div class="container__phone">
               <label class="input-label" for="info-phone">Phone</label>
-              <input type="number" class="input" id="info-phone" placeholder="(83) 00000-0000" />
+              <input type="tel" class="input" id="info-phone" placeholder="(83) 00000-0000" />
             </div>
           </div>
           <form class="container__page__form-date">
@@ -56,11 +55,9 @@
             </span>
             <span>
               <label class="input-label input-label-date" for="age">Age</label>
-              <select class="input" name="age" id="age"></select>
+              <input class="input" name="age" id="age" readonly />
             </span>
           </form>
-
-
           <div class="container__page__checkbox">
             <input type="checkbox" id="page__checkbox" />
             <label for="page__checkbox" class="checkbox-label">I accept the terms and privacy</label>
@@ -84,7 +81,7 @@
           <input type="url" class="input full" id="info-certificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" />
           <span class="heart"></span>
 
-          <button class="button-primary more" id="">More</span></button>
+          <button class="button-primary more" id="">More</button>
 
           <label class="input-label" for="info-teamName">Team Name *</label>
           <input type="text" class="input full" id="info-teamName" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" />
@@ -99,5 +96,6 @@
         </div>
       </div>
     </section>
+    <script defer src="./script/data.js"></script>
   </body>
 </html>

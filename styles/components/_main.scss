@@ -80,13 +80,14 @@
 
     .container__page__form-date {
       display: grid;
-      grid-template-columns: repeat(1fr, 4);
+      grid-template-columns: repeat(4, 1fr);
       grid-template-rows: 1fr 1fr;
       column-gap: 24px;
-    }
-
-    .input-label-date-box {
-      margin: 0.7rem;
+      span{
+        #day, #month, #year, #age{
+          color: $grey-color;
+        }
+      }
     }
 
     .input-label-date {

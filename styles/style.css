@@ -85,13 +85,13 @@ html, body {
 }
 #container .container__box .container__page__form-date {
   display: grid;
-  grid-template-columns: repeat(1fr, 4);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr;
   -moz-column-gap: 24px;
        column-gap: 24px;
 }
-#container .container__box .input-label-date-box {
-  margin: 0.7rem;
+#container .container__box .container__page__form-date span #day, #container .container__box .container__page__form-date span #month, #container .container__box .container__page__form-date span #year, #container .container__box .container__page__form-date span #age {
+  color: #767676;
 }
 #container .container__box .input-label-date {
   margin: 0;
