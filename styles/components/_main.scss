@@ -4,14 +4,14 @@
   margin: 0 auto;
   min-height: 760px;
   position: relative;
-  // #first-page{
-  //   display: none;
-  // }
+   #first-page{
+     display: none;
+   }
   #second-page{
     display: none;
   }
   #third-page{
-    display: none;
+    display: block;
   }
   .container__box {
     padding: 2.5rem 3.125rem;
@@ -26,6 +26,7 @@
       display: flex;
       align-items: center;
       .button {
+        font-family: $font-text;
         color: $black-color;
         padding: 13px 0;
         width: 33.3%;
@@ -56,12 +57,29 @@
     }
 
     .input {
+      font-family: $font-text;
       padding: 11px;
       border: $border;
       background-color: #ffffff;
       border-radius: 4px;
       width: 100%;
       box-sizing: border-box;
+      font-size: 1rem;
+    }
+
+    .button-primary {
+      font-family: $font-text;
+      text-align: center;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $primary-color;
+      border: none;
+      border-radius: 4px;
+      color: #ffffff;
+      font-weight: 400;
+      line-height: 18px;
       font-size: 1rem;
     }
 
@@ -110,6 +128,14 @@
   }
 }
 
+//.active {
+//  display: block;
+//}
+
+//.disable {
+//  display: none;
+//}
+
 .next::after {
   content: "";
   background: url("../../img/icons/arrow-right.svg") no-repeat center;
@@ -130,9 +156,10 @@
   content: "";
   background: url("../../img/icons/check.svg") no-repeat center;
 
-  width: 100%;
+  width: 14px;
   height: 100%;
-  margin-left: 9px;
+  margin-right: 9px;
+
 
   text-align: center;
 }
@@ -159,26 +186,6 @@
   text-align: center;
 }
 
-.button-primary {
-  text-align: center;
-  height: 40px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background-color: $primary-color;
-
-  border: none;
-  border-radius: 4px;
-
-  color: #ffffff;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 0em;
-  text-align: left;
-}
-
 .next {
   width: 81px;
   position: absolute;
@@ -198,18 +205,38 @@
   margin: 1.125rem 0 0.75rem auto;
 }
 
-#info-certificates {
+/*==== heart certificates =====*/
+
+.form-input {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.heart::before {
-  background: url(../../img/icons/heart.svg) no-repeat center;
+#info-certificates {
+  display: block;
   width: 100%;
+  outline: 0;
+  line-height: 30px;
+}
+.icon {
+  position: absolute;
+  right: 12px;
+  top: 0;
+
   height: 100%;
-  display: inline;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heart::after {
+  content: url(../../img/icons/heart.svg);
+
 }
 
-#info-certificates + .heart::before {
-  position: absolute;
-  right: 10px;
-}
+
+
+
+
+

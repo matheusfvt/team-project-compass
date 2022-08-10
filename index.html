@@ -9,7 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Nunito&display=swap" rel="stylesheet" />
+
     <title>TEAM PROJECT</title>
+    <link rel="shortcut icon" href="img/icons/ico.png" type="image/x-icon" />
   </head>
   <body>
     <section id="container">
@@ -17,13 +19,12 @@
         <h1 class="container__title">Team Sign Up</h1>
 
         <div class="container__navigation">
-          <button class="button bto-active">Basic</button>
-          <button class="button">Social</button>
-          <button class="button">Certificates</button>
+          <button class="button bto-active" id="button-basic">Basic</button>
+          <button class="button" id="button-social">Social</button>
+          <button class="button" id="button-certificates">Certificates</button>
         </div>
 
-        <div class="container__page active" id="first-page">
-            
+        <div class="container__page page1 active" id="first-page">
           <label class="input-label" for="info-name">Full Name *</label>
           <input type="text" class="input full" id="info-name" placeholder="Foo Bar" />
 
@@ -37,7 +38,7 @@
             </div>
             <div class="container__phone">
               <label class="input-label" for="info-phone">Phone</label>
-              <input type="number" class="input" id="info-phone" placeholder="(83) 00000-0000" />
+              <input type="tel" class="input" id="info-phone" placeholder="(83) 00000-0000" />
             </div>
           </div>
           <form class="container__page__form-date">
@@ -60,7 +61,6 @@
             </span>
           </form>
 
-
           <div class="container__page__checkbox">
             <input type="checkbox" id="page__checkbox" />
             <label for="page__checkbox" class="checkbox-label">I accept the terms and privacy</label>
@@ -69,7 +69,7 @@
           <button class="button-primary next">Next<span class="arrow-right"></span></button>
         </div>
 
-        <div class="page" id="second-page">
+        <div class="page2" id="second-page">
           <label class="input-label" for="info-linkedin">LinkedIn</label>
           <input type="url" class="input full" id="info-linkedin" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" />
 
@@ -79,12 +79,14 @@
           <button class="button-primary next">Next</button>
         </div>
 
-        <div id="third-page">
+        <div class="page3" id="third-page">
           <label class="input-label" for="info-certificates">Cerficates</label>
-          <input type="url" class="input full" id="info-certificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" />
-          <span class="heart"></span>
+          <div class="form-input">
+            <input type="url" class="input full" id="info-certificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" />
+            <span class="icon"><i class="heart"></i></span>
+          </div>
 
-          <button class="button-primary more" id="">More</span></button>
+          <button class="button-primary more" id="">More</button>
 
           <label class="input-label" for="info-teamName">Team Name *</label>
           <input type="text" class="input full" id="info-teamName" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" />
@@ -95,9 +97,11 @@
           <label class="input-label" for="info-graduation">Graduation *</label>
           <input type="text" class="input full" id="info-graduation" placeholder="Computer Science" />
 
-          <button class="button-primary finish">Finish</button>
+          <button class="button-primary finish"><span class="icon"><i class="check"></i> </i></span>Finish</button>
         </div>
       </div>
     </section>
+
+    <script src="script/redirect-page.js" defer></script>
   </body>
 </html>
