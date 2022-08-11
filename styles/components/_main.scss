@@ -4,17 +4,23 @@
   margin: 0 auto;
   min-height: 760px;
   position: relative;
-  #first-page {
-    display: block;
-  }
-  #second-page {
-    display: none;
-  }
-  #third-page {
-    display: none;
-  }
+  // #first-page {
+  //   display: block;
+  // }
+  // #second-page {
+  //   display: none;
+  // }
+  // #third-page {
+  //   display: none;
+  // }
   .container__box {
     padding: 2.5rem 3.125rem;
+    .active{
+      display: block !important;
+    }
+    .page{
+      display: none;
+    }
     .container__title {
       font-family: $font-title;
       color: $black-color;
@@ -141,14 +147,6 @@
     }
   }
 }
-
-//.active {
-//  display: block;
-//}
-
-//.disable {
-//  display: none;
-//}
 
 .next::after {
   content: "";

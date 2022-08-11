@@ -4,9 +4,7 @@ const emailError = document.getElementById("email-error");
 const phoneError = document.getElementById("phone-error");
 const birthError = document.getElementById("birth-error");
 const checkboxError = document.getElementById("checkbox-error");
-const formError = document.getElementById('form-error');
-
-
+const formError = document.getElementById("form-error");
 
 function validateName() {
   var name = document.querySelector("#info-name").value;
@@ -24,18 +22,22 @@ function validateName() {
 
   nameError.innerHTML = "";
   return true;
-  
 }
 
 function validateNick() {
   var nick = document.querySelector("#info-nickname").value;
 
-  if (nick.length > 0 && nick.length < 3) {
+  if (nick.length == 0 || nick == null || nick == "") {
+    nickError.innerHTML = "";
+    return true;
+  }
+
+  if (nick !== "" && nick.length < 3) {
     nickError.innerHTML = "Your nickname needs to be at least 3 letters";
     return false;
   }
 
-  let regex = new RegExp("^[A-Z][a-z]*(?: [A-Z][a-z]*)*$", 'g');
+  let regex = new RegExp("^[A-Z][a-z]*(?: [A-Z][a-z]*)*$", "g");
 
   if (!nick.match(regex)) {
     nickError.innerHTML = "Your nickname needs to be capitalized and can only have letters";
@@ -45,7 +47,7 @@ function validateNick() {
   return true;
 }
 
-function validateEmail(){
+function validateEmail() {
   var email = document.querySelector("#info-email").value;
 
   if (email.length == 0 || email == null || email == "") {
@@ -53,29 +55,34 @@ function validateEmail(){
     return false;
   }
 
-  let regex = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
+  let regex = new RegExp("^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$");
 
-  if(!email.match(regex)){
-    emailError.innerHTML = 'Please enter a valid email';
+  if (!email.match(regex)) {
+    emailError.innerHTML = "Please enter a valid email";
     return false;
   }
 
-  emailError.innerHTML = '';
+  emailError.innerHTML = "";
   return true;
 }
 
 function validatePhone() {
   var phone = document.querySelector("#info-phone").value;
 
-  if (phone.length !== 11) {
-    phoneError.innerHTML = "Phone should be 11 digits";
-    return false;
+  if (phone.length == 0 || phone == null || phone == "") {
+    phoneError.innerHTML = "";
+    return true;
   }
-
-  let regex = new RegExp("^[0-9]*$", 'i');
+  
+  let regex = new RegExp("^[0-9]*$");
 
   if (!phone.match(regex)) {
     phoneError.innerHTML = "Phone can only have numbers";
+    return false;
+  }
+
+  if (phone !== "" && phone.length !== 11) {
+    phoneError.innerHTML = "Phone should be 11 digits";
     return false;
   }
 
@@ -87,45 +94,43 @@ function validatePhone() {
   return true;
 }
 
-function validateBirthday(){
-  var day = document.querySelector('#day').value;
-  var month = document.querySelector('#month').value;
-  var year = document.querySelector('#year').value;
-  var age = document.querySelector('#age').value;
+function validateBirthday() {
+  var day = document.querySelector("#day").value;
+  var month = document.querySelector("#month").value;
+  var year = document.querySelector("#year").value;
+  var age = document.querySelector("#age").value;
 
-  if(day == '01' && month == '01' && year == '2022'){
-    birthError.innerHTML = 'Please change your birthday';
+  if (day == "01" && month == "01" && year == "2022") {
+    birthError.innerHTML = "Please change your birthday";
     return false;
   }
 
-  if (age == 0 || age == '0'){
-    birthError.innerHTML = 'Please enter a valid birthday';
+  if (age == 0 || age == "0" || age < 0) {
+    birthError.innerHTML = "Please enter a valid birthday";
     return false;
   }
 
-  birthError.innerHTML = '';
+  birthError.innerHTML = "";
   return true;
 }
 
-function validateCheckbox(){
-  var checkbox = document.querySelector('#page__checkbox');
+function validateCheckbox() {
+  var checkbox = document.querySelector("#page__checkbox");
 
-  if(checkbox.checked){
-    checkboxError.innerHTML = '';
+  if (checkbox.checked) {
+    checkboxError.innerHTML = "";
     return true;
-  } else{
-    checkboxError.innerHTML = 'You need to accept the terms and privacy';
+  } else {
+    checkboxError.innerHTML = "You need to accept the terms and privacy";
     return false;
   }
 }
 
-function validateForm(){
-  if(!validateName() || !validateEmail() || !validateBirthday() || !validateCheckbox()){
-    formError.innerHTML = 'Please fix your errors before you can submit';
+function validateFirstForm() {
+  if (!validateName() || !validateNick() || !validateEmail() || !validatePhone() || !validateBirthday() || !validateCheckbox()) {
+    formError.innerHTML = "Please fix your errors before you can submit";
     return false;
   }
+  formError.innerHTML = "";
+  showSecondPage();
 }
-
-
-
-
