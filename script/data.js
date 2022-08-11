@@ -115,8 +115,5 @@ function calcAge(year, month, day){
   const ageDate = new Date(ageDifMs);
 
   return Math.abs(ageDate.getUTCFullYear() - 1970);
-
 }
-
-
 
