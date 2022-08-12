@@ -7,14 +7,19 @@ var page2 = document.getElementById("second-page");
 var page3 = document.getElementById("third-page");
 var page4 = document.getElementById("fourth-page");
 
+var buttons = document.querySelectorAll(".button");
+
 var containerNav = document.querySelector('.container__navigation');
+var pageTitle = document.querySelector('#page-title');
 
 function resetPages() {
   page1.style.display = 'none';
   page2.style.display = 'none';
   page3.style.display = 'none';
   page4.style.display = 'none';
-  var buttons = document.querySelectorAll(".button");
+  if(containerNav.style.display == 'none'){
+    containerNav.style.display = 'flex';
+  }
   for (let i = 0; i < buttons.length; i++) {
     var el = buttons[i];
     if (el.classList.contains("bto-active")) {
@@ -25,28 +30,57 @@ function resetPages() {
 
 function showFirstPage() {
   resetPages();
-  containerNav.style.display = 'block';
+  pageTitle.style.display = 'unset';
   buttonB.classList.add('bto-active');
   page1.style.display = 'block';
-  // page1.classList.add('active');
 }
 
+var flagSecond = false;
 function showSecondPage() {
   resetPages();
   buttonS.classList.add('bto-active');
   page2.style.display = 'block';
-  // page2.classList.add('active');
+  flagSecond = true;
 }
 
+var flagThird = false;
 function showThirdPage() {
   resetPages();
   buttonC.classList.add('bto-active');
   page3.style.display = 'block';
-  // page3.classList.add('active');
+  flagThird = true;
 }
 
 function showFourthPage(){
   resetPages();
   containerNav.style.display = 'none';
+  pageTitle.style.display = 'none';
   page4.style.display = 'block';
 }
+
+function scButton(){
+  if(flagSecond == true){
+    showSecondPage();
+  } else{
+    return validateFirstForm();
+  }
+}
+
+function ctButton(){
+  if(flagThird == true){
+    showThirdPage();
+  } else{
+    return validateSecondForm();
+  }
+}
+
+function resetButton(){
+  window.localStorage.clear();
+  page1.reset();
+  page2.reset();
+  page3.reset();
+  flagThird = false;
+  flagSecond = false;
+  showFirstPage();
+}
+

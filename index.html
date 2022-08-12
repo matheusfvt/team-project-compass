@@ -23,12 +23,12 @@
   <body>
     <section id="container">
       <div class="container__box">
-        <h1 class="container__title">Team Sign Up</h1>
+        <h1 id="page-title" class="container__title">Team Sign Up</h1>
         <!-- top navigation -->
         <div class="container__navigation">
-          <button class="button bto-active" id="button-basic">Basic</button>
-          <button class="button" id="button-social">Social</button>
-          <button class="button" id="button-certificates">Certificates</button>
+          <button class="button bto-active" id="button-basic" onclick="showFirstPage()">Basic</button>
+          <button class="button" id="button-social" onclick="scButton()">Social</button>
+          <button class="button" id="button-certificates" onclick="ctButton()">Certificates</button>
         </div>
         <!-- page1 -->
         <form class="page" id="first-page" onchange="validateFirstButton()">
@@ -117,11 +117,11 @@
           </div>
           <span class="input-error" id="certificates-error"></span>
           <ul id="certificates-list">
-            <li class="form-input certificate-li"> CRIA LI ASSIM NO JS
+            <!-- <li class="form-input certificate-li"> CRIA LI ASSIM NO JS
               <input class="input input-certificate" readonly></input>
               <span class="icon"><i class="pencil"></i></span>
               <span class="icon"><i class="heart"></i></span>
-            </li>
+            </li> -->
           </ul>
           <!-- More button -->
           <button class="button-primary more"  id="">More</button>
@@ -148,6 +148,7 @@
         </form>
 
         <div class="page" id="fourth-page">
+          <h1 class="container__title">Your Information</h1>
           <ul class="content-resume">
             <li class="resume-itens">
               <h3>Full name:</h3>
@@ -166,6 +167,10 @@
               <p id="resume-phone"></p>
             </li>
             <li class="resume-itens">
+              <h3>Your age:</h3>
+              <p id="resume-age"></p>
+            </li>
+            <li class="resume-itens">
               <h3>Your Birthday:</h3>
               <div class="container-date">
                 <span id="resume-day"></span>
@@ -175,34 +180,31 @@
             </li>
             
             <li class="resume-itens">
-              <h3>Linkedin:</h3>
+              <h3>Linkedin</h3>
               <p id="resume-linkedin"></p>
             </li>
             <li class="resume-itens">
-              <h3>Github:</h3>
+              <h3>Github</h3>
               <p id="resume-github"></p>
             </li>
             <li class="resume-itens">
-              <h3>Institution:</h3>
+              <h3>Institution</h3>
               <p id="resume-institution"></p>
             </li>
             <li class="resume-itens">
-              <h3>Graduation:</h3>
+              <h3>Graduation</h3>
               <p id="resume-graduation"></p>
             </li>
             <li class="resume-itens">
-              <h3>Team Name:</h3>
+              <h3>Team Name</h3>
               <p id="resume-teamName"></p>
             </li>
+            <li class="resume-itens">
+              <h3>Certificates</h3>
+              <ul id="resume-certificates"></ul>
+            </li>
           </ul>
-          <li class="resume-itens">
-            <h3>certificates:</h3>
-            <p id="resume-certificates"></p>
-          </li>
-
-
-
-          <button class="button-primary next submit">submit</button>
+          <button onclick="resetButton()" class="button-primary next reset">Reset</button>
         </div>
     </section>
   </body>

@@ -89,7 +89,7 @@ function validatePhone() {
   phoneError.innerHTML = "";
   document.getElementById("info-phone").addEventListener("blur", function (e) {
     var x = e.target.value.replace(/\D/g, "").match(/(\d{2})(\d{5})(\d{4})/);
-    e.target.value = "(" + x[1] + ") " + x[2] + "-" + x[3];
+    e.target.value = "(" + x[1] + ")" + x[2] + "-" + x[3];
   });
   return true;
 }
@@ -128,30 +128,34 @@ function validateCheckbox() {
 
 //VALIDAR SE BOTAO EH CLICAVEL
 
-var firstNext = document.getElementById('first-page-button');
+var firstNext = document.getElementById("first-page-button");
 
-function validateFirstButton(){
-  if (!validateName() || !validateNick() || !validateEmail() || !validateBirthday() || !validateCheckbox()) {
-    if(!firstNext.classList.contains('button-primary-disabled')){
-      firstNext.classList.add('button-primary-disabled');
-      firstNext.classList.add('next-disabled');
+function validateFirstButton() {
+  if (!validateFirstForm()) {
+    nameError.innerHTML = '';
+    nickError.innerHTML = '';
+    emailError.innerHTML = '';
+    phoneError.innerHTML = '';
+    birthError.innerHTML = '';
+    checkboxError.innerHTML = '';
+    FformError.innerHTML = '';
+    if (!firstNext.classList.contains("button-primary-disabled")) {
+      firstNext.classList.add("button-primary-disabled");
+      firstNext.classList.add("next-disabled");
     }
     return false;
   } else {
-    FformError.innerHTML = '';
-    firstNext.classList.remove('button-primary-disabled');
-    firstNext.classList.remove('next-disabled');
+    FformError.innerHTML = "";
+    firstNext.classList.remove("button-primary-disabled");
+    firstNext.classList.remove("next-disabled");
     return true;
   }
 }
 
 function validateFirstForm() {
   if (!validateName() || !validateNick() || !validateEmail() || !validateBirthday() || !validateCheckbox()) {
-    FformError.innerHTML = "Please fix your errors before you can submit";
     return false;
   } else {
-    FformError.innerHTML = "";
-    showSecondPage();
     return true;
   }
 }
@@ -159,9 +163,15 @@ function validateFirstForm() {
 //SUBMIT FUNCTION OF FIRST FORM
 
 var page1 = document.getElementById("first-page");
-page1.addEventListener('submit', (event)=>{
+page1.addEventListener("submit", (event) => {
   event.preventDefault();
-  validateFirstForm();
+  if(!validateFirstForm()){
+    FformError.innerHTML = "Please fix your errors before you can submit";
+  } else{
+    showSecondPage();
+    FformError.innerHTML = '';
+    return true;
+  }
 });
 
 //VARIABLES FOR SECOND FORM
@@ -170,69 +180,68 @@ const linkedinError = document.getElementById("linkedin-error");
 const gitError = document.getElementById("git-error");
 const SformError = document.getElementById("second-form-error");
 
-
 //VALIDATION FUNCTIONS FOR SECOND FORM
 
-function validateLinkedin(){
-  var linkedin = document.querySelector('#info-linkedin').value;
+function validateLinkedin() {
+  var linkedin = document.querySelector("#info-linkedin").value;
 
   if (linkedin.length == 0 || linkedin == null || linkedin == "") {
     linkedinError.innerHTML = "";
     return true;
   }
 
-  if(linkedin.length !== 0 && !linkedin.match(/^(http(s)?:\/\/)?([\w]+\.)?linkedin\.com\/(pub|in|profile)/gm)){
-    linkedinError.innerHTML = 'Your link is not valid Linkedin url';
+  if (linkedin.length !== 0 && !linkedin.match(/^(http(s)?:\/\/)?([\w]+\.)?linkedin\.com\/(pub|in|profile)/gm)) {
+    linkedinError.innerHTML = "Your link is not valid Linkedin url";
     return false;
   }
 
-  linkedinError.innerHTML = '';
+  linkedinError.innerHTML = "";
   return true;
 }
 
-function validateGit(){
-  var git = document.querySelector('#info-github').value;
+function validateGit() {
+  var git = document.querySelector("#info-github").value;
 
   if (git.length == 0 || git == null || git == "") {
     gitError.innerHTML = "Github cannot be blank";
     return false;
   }
 
-  if(!git.match(/^(https?:\/\/)?(www\.)?github\.com\/[a-zA-Z0-9_]{1,25}$/igm)){
-    gitError.innerHTML = 'Your link is not a Github url'
+  if (!git.match(/^(https?:\/\/)?(www\.)?github\.com\/[a-zA-Z0-9_]{1,25}$/gim)) {
+    gitError.innerHTML = "Your link is not a Github url";
     return false;
   }
 
-  gitError.innerHTML = '';
+  gitError.innerHTML = "";
   return true;
 }
 
 //VALIDAR SE BOTAO EH CLICAVEL
 
-var secondNext = document.getElementById('second-page-button');
+var secondNext = document.getElementById("second-page-button");
 
-function validateSecondButton(){
-  if (!validateLinkedin() || !validateGit()) {
-    if(!secondNext.classList.contains('button-primary-disabled')){
-      secondNext.classList.add('button-primary-disabled');
-      secondNext.classList.add('next-disabled');
+function validateSecondButton() {
+  if (!validateSecondForm()) {
+    linkedinError.innerHTML = '';
+    gitError.innerHTML = '';
+    SformError.innerHTML = '';
+    if (!secondNext.classList.contains("button-primary-disabled")) {
+      secondNext.classList.add("button-primary-disabled");
+      secondNext.classList.add("next-disabled");
     }
     return false;
   } else {
-    SformError.innerHTML = '';
-    secondNext.classList.remove('button-primary-disabled');
-    secondNext.classList.remove('next-disabled');
+    SformError.innerHTML = "";
+    secondNext.classList.remove("button-primary-disabled");
+    secondNext.classList.remove("next-disabled");
     return true;
   }
 }
 
 function validateSecondForm() {
   if (!validateLinkedin() || !validateGit()) {
-    SformError.innerHTML = "Please fix your errors before you can submit";
     return false;
   } else {
-    SformError.innerHTML = "";
-    showThirdPage();
     return true;
   }
 }
@@ -240,79 +249,86 @@ function validateSecondForm() {
 //SUBMIT FUNCTION OF SECOND FORM
 
 var page2 = document.getElementById("second-page");
-page2.addEventListener('submit', (event)=>{
+page2.addEventListener("submit", (event) => {
   event.preventDefault();
-  validateSecondForm();
+  if(!validateSecondForm()){
+    SformError.innerHTML = "Please fix your errors before you can submit";
+  } else{
+    showThirdPage();
+    SformError.innerHTML = "";
+    return true;
+  }
+  
 });
 
 //VARIABLES FOR THIRD FORM
 
-const TnameError = document.getElementById("checkbox-error");
-const institutionError = document.getElementById("checkbox-error");
-const graduationError = document.getElementById("checkbox-error");
+const TnameError = document.getElementById("teamName-error");
+const institutionError = document.getElementById("instituition-error");
+const graduationError = document.getElementById("graduation-error");
 const TformError = document.getElementById("third-form-error");
 
 //VALIDATION FUNCTIONS FOR THIRD FORM
 
-function validateTeamName(){
-  var team = document.querySelector('#info-teamName').value;
+function validateTeamName() {
+  var team = document.querySelector("#info-teamName").value;
 
   if (team.length == 0 || team == null || team == "") {
     TnameError.innerHTML = "Team name cannot be blank";
     return false;
   }
-  TnameError.innerHTML = '';
+  TnameError.innerHTML = "";
   return true;
 }
 
-function validateInstitution(){
-  var institution = document.querySelector('#info-institution').value;
+function validateInstitution() {
+  var institution = document.querySelector("#info-institution").value;
 
   if (institution.length == 0 || institution == null || institution == "") {
     institutionError.innerHTML = "Institution cannot be blank";
     return false;
   }
-  institutionError.innerHTML = '';
+  institutionError.innerHTML = "";
   return true;
 }
 
-function validateGraduation(){
-  var graduation = document.querySelector('#info-graduation').value;
+function validateGraduation() {
+  var graduation = document.querySelector("#info-graduation").value;
 
   if (graduation.length == 0 || graduation == null || graduation == "") {
     graduationError.innerHTML = "Graduation cannot be blank";
     return false;
   }
-  graduationError.innerHTML = '';
+  graduationError.innerHTML = "";
   return true;
 }
 
 //VALIDAR SE BOTAO EH CLICAVEL
-var thirdFinish = document.getElementById('third-page-button');
+var thirdFinish = document.getElementById("third-page-button");
 
-function validateThirdButton(){
-  if (!validateInstitution() || !validateTeamName() || !validateGraduation()) {
-    if(!thirdFinish.classList.contains('button-primary-disabled')){
-      thirdFinish.classList.add('button-primary-disabled');
-      thirdFinish.classList.add('next-disabled');
+function validateThirdButton() {
+  if (!validateThirdForm()) {
+    institutionError.innerHTML = '';
+    TnameError.innerHTML = '';
+    graduationError.innerHTML = '';
+    TformError.innerHTML = '';
+    if (!thirdFinish.classList.contains("button-primary-disabled")) {
+      thirdFinish.classList.add("button-primary-disabled");
+      thirdFinish.classList.add("finish-disabled");
     }
     return false;
   } else {
-    TformError.innerHTML = '';
-    thirdFinish.classList.remove('next-disabled');
-    thirdFinish.classList.remove('button-primary-disabled');
+    TformError.innerHTML = "";
+    thirdFinish.classList.remove("finish-disabled");
+    thirdFinish.classList.remove("button-primary-disabled");
     return true;
   }
 }
 
-
-function validateThirdForm(){
-  if(!validateInstitution() || !validateTeamName() || !validateGraduation()){
-    TformError.innerHTML = 'Please fix your errors before you can submit';
+function validateThirdForm() {
+  if (!validateInstitution() || !validateTeamName() || !validateGraduation()) {
     return false;
-  } else{
-    TformError.innerHTML = '';
-    showFourthPage();
+  } else {
     return true;
   }
 }
@@ -320,10 +336,13 @@ function validateThirdForm(){
 //SUBMIT FUNCTION OF THIRD FORM
 
 var page3 = document.getElementById("third-page");
-page3.addEventListener('submit', (event)=>{
+page3.addEventListener("submit", (event) => {
   event.preventDefault();
-  validateThirdForm();
+  if(!validateThirdForm()){
+    TformError.innerHTML = "Please fix your errors before you can submit";
+  } else{
+    showFourthPage();
+    TformError.innerHTML = ''
+    return true;
+  }
 });
-
-
-

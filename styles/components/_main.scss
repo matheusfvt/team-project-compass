@@ -1,5 +1,5 @@
 #container {
-  border: 1px solid gray;
+  // border: 1px solid gray;
   max-width: 617px;
   margin: 0 auto;
   min-height: 760px;
@@ -42,6 +42,7 @@
       .bto-active {
         color: $primary-color;
         box-shadow: inset 0px -3px 0px $primary-color;
+        cursor: pointer;
       }
     }
     .input-label {
@@ -55,8 +56,8 @@
       font-size: 1.125rem;
       line-height: 1rem;
       display: inline-block;
-      padding-bottom: 0.875rem;
       grid-column: span 2;
+      align-self: flex-end;
     }
 
     .input {
@@ -68,6 +69,7 @@
       width: 100%;
       box-sizing: border-box;
       font-size: 1rem;
+      
     }
 
     .certificate-li {
@@ -122,6 +124,7 @@
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: 1fr 1fr;
       column-gap: 24px;
+      row-gap: 1rem;
       #birth-error {
         grid-column: span 2;
         padding-bottom: 0.875rem;
@@ -133,6 +136,7 @@
         #year,
         #age {
           color: $grey-color;
+          height: 50px;
         }
       }
     }
@@ -198,9 +202,16 @@
 
 .next {
   width: 81px;
-  position: absolute;
-  bottom: 60px;
-  right: 50px;
+  margin: 2.7rem 0 1rem auto;
+}
+
+.finish::before {
+  content: "";
+  background: url("../../img/icons/check.svg") no-repeat center;
+  width: 14px;
+  height: 100%;
+  margin-right: 9px;
+  text-align: center;
 }
 
 .finish {
@@ -304,4 +315,45 @@
   width: 100px;
   position: unset;
   margin-left: auto;
+}
+
+@media (max-width:540px){
+  #container .container__box .container__email {
+    flex: 1;
+    margin-right: 0;
+}
+  .container__phone-email{
+    flex-direction: column;
+  }
+}
+
+@media (max-width:515px){
+  .container__box{
+    padding: 1.25rem 1.55rem;
+  }
+  #container .container__box .input-label{
+    margin-top: 1.7rem;
+  }
+  #container .container__box .container__page__form-date{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 0.5rem;
+  }
+  #container .container__box .container__page__form-date #birth-error{
+    grid-column: auto;
+    display: inline-block;
+  }
+  #container .container__box .input-label-big{
+    grid-column:auto;
+  }
+  #container .container__box .input-label-date{
+    margin: 0;
+  }
+
+  label[for="year"],
+  label[for="age"]{
+    margin-top: 1rem;
+  }
+  
+  
 }
