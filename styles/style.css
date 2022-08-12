@@ -17,13 +17,13 @@ html, body {
   position: relative;
 }
 #container #first-page {
-  display: none;
+  display: block;
 }
 #container #second-page {
   display: none;
 }
 #container #third-page {
-  display: block;
+  display: none;
 }
 #container .container__box {
   padding: 2.5rem 3.125rem;
@@ -77,7 +77,7 @@ html, body {
   box-sizing: border-box;
   font-size: 1rem;
 }
-#container .container__box .input-certificate {
+#container .container__box .certificate-li {
   margin-top: 0.5rem;
   font-size: 1rem;
 }
@@ -234,6 +234,9 @@ html, body {
 
 .pencil::after {
   content: url(../../img/icons/pencil.svg);
+  position: relative;
+  right: 30px;
+  cursor: pointer;
 }
 
 .fadeOut {
@@ -241,6 +244,6 @@ html, body {
   transition: 0.5s;
 }
 
-.heart-full {
-  fill: blue;
+.heart-blue::after {
+  content: url(../../img/icons/heart-blue.svg);
 }/*# sourceMappingURL=style.css.map */

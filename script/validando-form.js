@@ -4,7 +4,7 @@ const emailError = document.getElementById("email-error");
 const phoneError = document.getElementById("phone-error");
 const birthError = document.getElementById("birth-error");
 const checkboxError = document.getElementById("checkbox-error");
-const FformError = document.getElementsByClassName("first-form-error");
+const FformError = document.getElementById("first-form-error");
 
 //VALIDATION FUNCTIONS FOR FIRST FORM
 
@@ -149,7 +149,7 @@ page1.addEventListener('submit', (event)=>{
 
 const linkedinError = document.getElementById("linkedin-error");
 const gitError = document.getElementById("git-error");
-const SformError = document.getElementsByClassName("second-form-error");
+const SformError = document.getElementById("second-form-error");
 
 
 //VALIDATION FUNCTIONS FOR SECOND FORM
@@ -175,7 +175,7 @@ function validateGit(){
   var git = document.querySelector('#info-github').value;
 
   if (git.length == 0 || git == null || git == "") {
-    gitError.innerHTML = "Name cannot be blank";
+    gitError.innerHTML = "Github cannot be blank";
     return false;
   }
 
@@ -212,16 +212,9 @@ page2.addEventListener('submit', (event)=>{
 const TnameError = document.getElementById("checkbox-error");
 const institutionError = document.getElementById("checkbox-error");
 const graduationError = document.getElementById("checkbox-error");
-const TformError = document.getElementsByClassName("third-form-error");
+const TformError = document.getElementById("third-form-error");
 
-//VALIDATION FUNCTIONS FOR FIRST FORM
-
-function validateCertificate(){
-  var cert = document.querySelector('#info-certificates').value;
-
-}
-
-
+//VALIDATION FUNCTIONS FOR THIRD FORM
 
 function validateTeamName(){
   var team = document.querySelector('#info-teamName').value;
@@ -254,6 +247,17 @@ function validateGraduation(){
   }
   graduationError.innerHTML = '';
   return true;
+}
+
+function validateThirdForm(){
+  if(!validateInstitution() || !validateTeamName() || !validateGraduation()){
+    TformError.innerHTML = 'Please fix your errors before you can submit';
+    return false;
+  } else{
+    TformError.innerHTML = '';
+    showFirstPage();
+    return true;
+  }
 }
 
 

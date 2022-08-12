@@ -5,22 +5,16 @@
   min-height: 760px;
   position: relative;
   #first-page{
-    display: none;
+    display: block;
   }
   #second-page{
     display: none;
   }
   #third-page{
-    display: block;
+    display: none;
   }
   .container__box {
     padding: 2.5rem 3.125rem;
-    // .active{
-    //   display: block;
-    // }
-    // .page{
-    //   display: none;
-    // }
     .container__title {
       font-family: $font-title;
       color: $black-color;
@@ -72,12 +66,11 @@
       font-size: 1rem;
     }
 
-    .input-certificate{
+    .certificate-li{
       margin-top: 0.5rem;
       font-size: 1rem;
-      
-     
     }
+
     .input-error {
       color: red;
       font-size: 0.9rem;
@@ -250,6 +243,9 @@
 
 .pencil::after{
   content: url(../../img/icons/pencil.svg);
+  position: relative;
+  right: 30px;
+  cursor: pointer;
 }
 
 .fadeOut {
@@ -257,6 +253,6 @@
   transition: 0.5s;
 }
 
-.heart-full{
-  fill: blue;
+.heart-blue::after{
+  content: url(../../img/icons/heart-blue.svg);
 }
