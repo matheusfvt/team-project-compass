@@ -4,18 +4,18 @@ const emailError = document.getElementById("email-error");
 const phoneError = document.getElementById("phone-error");
 const birthError = document.getElementById("birth-error");
 const checkboxError = document.getElementById("checkbox-error");
-const formError = document.getElementById("form-error");
+const FformError = document.getElementsByClassName("first-form-error");
+
+//VALIDATION FUNCTIONS FOR FIRST FORM
 
 function validateName() {
   var name = document.querySelector("#info-name").value;
-
-  let regex = new RegExp("^[a-zA-Z]+ [a-zA-Z]+$");
 
   if (name.length == 0 || name == null || name == "") {
     nameError.innerHTML = "Name cannot be blank";
     return false;
   }
-  if (!name.match(regex)) {
+  if (!name.match(/^[A-Z][a-zA-Z]{2,}(?: [A-Z][a-zA-Z]*){0,2}$/)) {
     nameError.innerHTML = "Please write your full name correctly";
     return false;
   }
@@ -37,10 +37,10 @@ function validateNick() {
     return false;
   }
 
-  let regex = new RegExp("^[A-Z][a-z]*(?: [A-Z][a-z]*)*$", "g");
+  let regex = new RegExp("^[A-Z][a-z]*(?: [A-Z][a-z]*)*$", "i");
 
   if (!nick.match(regex)) {
-    nickError.innerHTML = "Your nickname needs to be capitalized and can only have letters";
+    nickError.innerHTML = "Your nickname can only have letters";
     return false;
   }
   nickError.innerHTML = "";
@@ -55,7 +55,7 @@ function validateEmail() {
     return false;
   }
 
-  let regex = new RegExp("^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$");
+  let regex = new RegExp("^[a-z0-9.]+@[a-z0-9]+.[a-z]+.([a-z]+)?$");
 
   if (!email.match(regex)) {
     emailError.innerHTML = "Please enter a valid email";
@@ -73,7 +73,7 @@ function validatePhone() {
     phoneError.innerHTML = "";
     return true;
   }
-  
+
   let regex = new RegExp("^[0-9]*$");
 
   if (!phone.match(regex)) {
@@ -127,10 +127,85 @@ function validateCheckbox() {
 }
 
 function validateFirstForm() {
-  if (!validateName() || !validateNick() || !validateEmail() || !validatePhone() || !validateBirthday() || !validateCheckbox()) {
-    formError.innerHTML = "Please fix your errors before you can submit";
+  if (!validateName() || !validateNick() || !validateEmail() || !validateBirthday() || !validateCheckbox()) {
+    FformError.innerHTML = "Please fix your errors before you can submit";
+    return false;
+  } else {
+    FformError.innerHTML = "";
+    showSecondPage();
+    return true;
+  }
+}
+
+//FUNÇÃO DE SUBMIT DO PRIMEIRO FORM
+
+var page1 = document.getElementById("first-page");
+page1.addEventListener('submit', (event)=>{
+  event.preventDefault();
+  validateFirstForm();
+});
+
+const linkedinError = document.getElementById("linkedin-error");
+const gitError = document.getElementById("git-error");
+const SformError = document.getElementsByClassName("second-form-error");
+
+
+//VALIDATION FUNCTIONS FOR SECOND FORM
+
+function validateLinkedin(){
+  var linkedin = document.querySelector('#info-linkedin').value;
+
+  if (linkedin.length == 0 || linkedin == null || linkedin == "") {
+    linkedinError.innerHTML = "";
+    return true;
+  }
+
+  if(linkedin.length !== 0 && !linkedin.match(/^(http(s)?:\/\/)?([\w]+\.)?linkedin\.com\/(pub|in|profile)/gm)){
+    linkedinError.innerHTML = 'Your link is not valid Linkedin url';
     return false;
   }
-  formError.innerHTML = "";
-  showSecondPage();
+
+  linkedinError.innerHTML = '';
+  return true;
 }
+
+function validateGit(){
+  var git = document.querySelector('#info-github').value;
+
+  if (git.length == 0 || git == null || git == "") {
+    gitError.innerHTML = "Name cannot be blank";
+    return false;
+  }
+
+  if(!git.match(/^(https?:\/\/)?(www\.)?github\.com\/[a-zA-Z0-9_]{1,25}$/igm)){
+    gitError.innerHTML = 'Your link is not a Github url'
+    return false;
+  }
+
+  gitError.innerHTML = '';
+  return true;
+}
+
+function validateSecondForm() {
+  if (!validateLinkedin() || !validateGit()) {
+    SformError.innerHTML = "Please fix your errors before you can submit";
+    return false;
+  } else {
+    SformError.innerHTML = "";
+    showThirdPage();
+    return true;
+  }
+}
+
+//FUNÇÃO DE SUBMIT DO PRIMEIRO FORM
+
+var page2 = document.getElementById("second-page");
+page2.addEventListener('submit', (event)=>{
+  event.preventDefault();
+  validateSecondForm();
+});
+
+
+
+
+

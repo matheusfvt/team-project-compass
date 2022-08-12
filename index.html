@@ -25,9 +25,9 @@
           <button class="button" id="button-certificates">Certificates</button>
         </div>
         <!-- page1 -->
-        <div class="page active" id="first-page">
+        <form class="page active" id="first-page">
+          <span class="input-error" id="first-form-error"></span>
           <!-- Full name input -->
-          <span class="input-error" id="form-error"></span>
           <label class="input-label" for="info-name">Full Name *</label>
           <input type="text" class="input full" id="info-name" placeholder="Foo Bar" onkeyup="validateName()"/>
           <span class="input-error" id="name-error"></span>
@@ -81,22 +81,25 @@
           <span class="input-error" id="checkbox-error"></span>
 
           <!-- Next button first page -->
-          <button onclick="validateFirstForm()" class="button-primary next">Next<span class="arrow-right"></span></button>
-        </div>
+          <button type="submit" class="button-primary next">Next<span class="arrow-right"></span></button>
+        </form>
 
         <!-- page2 -->
-        <div class="page" id="second-page">
+        <form class="page" id="second-page">
+          <span class="input-error" id="second-form-error"></span>
           <!-- Linkedin input -->
           <label class="input-label" for="info-linkedin">LinkedIn</label>
-          <input type="url" class="input full" id="info-linkedin" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" />
+          <input type="url" class="input full" id="info-linkedin" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" onkeyup="validateLinkedin()" />
+          <span class="input-error" id="linkedin-error"></span>
 
           <!-- Github input -->
           <label class="input-label" for="info-github">Github *</label>
-          <input type="" class="input full" id="info-github" placeholder="https://github.com/foobar" />
+          <input type="" class="input full" id="info-github" placeholder="https://github.com/foobar" onkeyup="validateGit()"/>
+          <span class="input-error" id="git-error"></span>
 
           <!-- Next button second page -->
           <button class="button-primary next">Next</button>
-        </div>
+        </form>
 
         <div class="page" id="third-page">
           <!-- Certificates input -->
@@ -134,7 +137,7 @@
 
     <script src="script/puxa-dados.js" defer></script>
     <script  src="./script/data.js" defer></script>
-    <script src="script/redirect-page.js" defer></script>
-    <script src="script/validando-form.js" defer></script>
+    <script src="./script/redirect-page.js" defer></script>
+    <script src="./script/validando-form.js" defer></script>
   </body>
 </html>
