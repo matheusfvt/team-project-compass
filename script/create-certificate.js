@@ -12,9 +12,9 @@ moreButton.addEventListener("click", (event) => {
     heartIndex = [];
     console.log(j);
     j++;
-    // createCertificate(hear);
+    createCertificate();
   }
-  console.log(j);
+
 });
 
 function validateCertificate() {

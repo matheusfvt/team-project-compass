@@ -56,6 +56,7 @@
       line-height: 1rem;
       display: inline-block;
       padding-bottom: 0.875rem;
+      grid-column: span 2;
     }
 
     .input {
@@ -87,12 +88,20 @@
       align-items: center;
       justify-content: center;
       background-color: $primary-color;
-      border: none;
+      border: 2px solid transparent;
       border-radius: 4px;
       color: #ffffff;
       font-weight: 400;
       line-height: 18px;
       font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .button-primary-disabled{
+      border: 2px solid $primary-color;
+      color: $primary-color;
+      background-color: #ffffff;
+      cursor: unset;
     }
 
     .container__phone-email {
@@ -114,7 +123,7 @@
       grid-template-rows: 1fr 1fr;
       column-gap: 24px;
       #birth-error{
-          grid-column: span 3;
+          grid-column: span 2;
           padding-bottom: 0.875rem;
           margin-top: 2.125rem;
         }
@@ -169,28 +178,27 @@
 .next::after {
   content: "";
   background: url("../../img/icons/arrow-right.svg") no-repeat center;
-
   width: 100%;
   height: 100%;
-  margin-right: 6px;
-
+  margin-right: -5px;
   text-align: center;
 }
 
 .next::before {
   content: "";
-  margin-left: 11px;
+  margin-left: 4px;
 }
 
-.finish::before {
-  content: "";
-  background: url("../../img/icons/check.svg") no-repeat center;
+.next {
+  width: 81px;
+  position: absolute;
+  bottom: 60px;
+  right: 50px;
+}
 
-  width: 14px;
-  height: 100%;
-  margin-right: 9px;
-
-  text-align: center;
+.finish {
+  width: 91px;
+  margin: 3.5rem 0 0 auto;
 }
 
 .more::before {
@@ -215,24 +223,34 @@
   text-align: center;
 }
 
-.next {
-  width: 81px;
-  position: absolute;
-  bottom: 60px;
-  right: 50px;
-}
-
-.finish {
-  width: 91px;
-  position: absolute;
-  bottom: 72px;
-  right: 36px;
-}
-
 .more {
   width: 109px;
   margin: 1.125rem 0 0.75rem auto;
 }
+
+.next-disabled::after {
+  content: "";
+  background: url("../../img/icons/arrow-right-blue.svg") no-repeat center;
+  width: 100%;
+  height: 100%;
+  margin-right: -5px;
+  text-align: center;
+}
+
+.next-disabled::before {
+  content: "";
+  margin-left: 4px;
+}
+
+.finish-disabled::before {
+  content: "";
+  background: url("../../img/icons/check-blue.svg") no-repeat center;
+  width: 14px;
+  height: 100%;
+  margin-right: 9px;
+  text-align: center;
+}
+
 
 /*==== heart certificates =====*/
 

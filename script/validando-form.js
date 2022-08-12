@@ -126,6 +126,25 @@ function validateCheckbox() {
   }
 }
 
+//VALIDAR SE BOTAO EH CLICAVEL
+
+var firstNext = document.getElementById('first-page-button');
+
+function validateFirstButton(){
+  if (!validateName() || !validateNick() || !validateEmail() || !validateBirthday() || !validateCheckbox()) {
+    if(!firstNext.classList.contains('button-primary-disabled')){
+      firstNext.classList.add('button-primary-disabled');
+      firstNext.classList.add('next-disabled');
+    }
+    return false;
+  } else {
+    FformError.innerHTML = '';
+    firstNext.classList.remove('button-primary-disabled');
+    firstNext.classList.remove('next-disabled');
+    return true;
+  }
+}
+
 function validateFirstForm() {
   if (!validateName() || !validateNick() || !validateEmail() || !validateBirthday() || !validateCheckbox()) {
     FformError.innerHTML = "Please fix your errors before you can submit";
@@ -188,6 +207,25 @@ function validateGit(){
   return true;
 }
 
+//VALIDAR SE BOTAO EH CLICAVEL
+
+var secondNext = document.getElementById('second-page-button');
+
+function validateSecondButton(){
+  if (!validateLinkedin() || !validateGit()) {
+    if(!secondNext.classList.contains('button-primary-disabled')){
+      secondNext.classList.add('button-primary-disabled');
+      secondNext.classList.add('next-disabled');
+    }
+    return false;
+  } else {
+    SformError.innerHTML = '';
+    secondNext.classList.remove('button-primary-disabled');
+    secondNext.classList.remove('next-disabled');
+    return true;
+  }
+}
+
 function validateSecondForm() {
   if (!validateLinkedin() || !validateGit()) {
     SformError.innerHTML = "Please fix your errors before you can submit";
@@ -248,6 +286,25 @@ function validateGraduation(){
   graduationError.innerHTML = '';
   return true;
 }
+
+//VALIDAR SE BOTAO EH CLICAVEL
+var thirdFinish = document.getElementById('third-page-button');
+
+function validateThirdButton(){
+  if (!validateInstitution() || !validateTeamName() || !validateGraduation()) {
+    if(!thirdFinish.classList.contains('button-primary-disabled')){
+      thirdFinish.classList.add('button-primary-disabled');
+      thirdFinish.classList.add('next-disabled');
+    }
+    return false;
+  } else {
+    TformError.innerHTML = '';
+    thirdFinish.classList.remove('next-disabled');
+    thirdFinish.classList.remove('button-primary-disabled');
+    return true;
+  }
+}
+
 
 function validateThirdForm(){
   if(!validateInstitution() || !validateTeamName() || !validateGraduation()){
