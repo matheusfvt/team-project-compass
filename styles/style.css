@@ -148,17 +148,24 @@ html, body {
 #container .container__box .container__page__checkbox .checkbox-label {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-#container .container__box .content-resume .resume-itens {
+#container .container__box #fourth-page .content-resume {
+  margin-top: 60px;
+}
+#container .container__box #fourth-page .content-resume .resume-itens {
   font-family: "Nunito", sans-serif;
   font-size: 16px;
   margin-bottom: 2rem;
 }
-#container .container__box .content-resume .resume-itens h3 {
-  font-size: 1.5rem;
+#container .container__box #fourth-page .content-resume h3 {
+  font-size: 0.95rem;
   border-bottom: 2px solid #AAAAAA;
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.5rem;
 }
-#container .container__box .content-resume .container-date {
+#container .container__box #fourth-page .content-resume p, #container .container__box #fourth-page .content-resume span {
+  font-size: 1.15rem;
+  padding-top: 0.3rem;
+}
+#container .container__box #fourth-page .content-resume .container-date {
   display: flex;
 }
 
@@ -262,4 +269,10 @@ html, body {
 
 .heart-blue::after {
   content: url(../../img/icons/heart-blue.svg);
+}
+
+.submit {
+  width: 100px;
+  position: unset;
+  margin-left: auto;
 }/*# sourceMappingURL=style.css.map */

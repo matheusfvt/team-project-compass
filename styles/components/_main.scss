@@ -4,13 +4,13 @@
   margin: 0 auto;
   min-height: 760px;
   position: relative;
-  #first-page{
+  #first-page {
     display: block;
   }
-  #second-page{
+  #second-page {
     display: none;
   }
-  #third-page{
+  #third-page {
     display: none;
   }
   #fourth-page {
@@ -69,7 +69,7 @@
       font-size: 1rem;
     }
 
-    .certificate-li{
+    .certificate-li {
       margin-top: 0.5rem;
       font-size: 1rem;
     }
@@ -113,11 +113,11 @@
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: 1fr 1fr;
       column-gap: 24px;
-      #birth-error{
-          grid-column: span 3;
-          padding-bottom: 0.875rem;
-          margin-top: 2.125rem;
-        }
+      #birth-error {
+        grid-column: span 3;
+        padding-bottom: 0.875rem;
+        margin-top: 2.125rem;
+      }
       span {
         #day,
         #month,
@@ -125,7 +125,6 @@
         #age {
           color: $grey-color;
         }
-        
       }
     }
 
@@ -148,19 +147,26 @@
       }
     }
 
-    .content-resume {
-      .resume-itens {
-        font-family: $font-text;
-        font-size: $font-size;
-        margin-bottom: 2rem;
-        h3{
-          font-size: 1.5rem;
-          border-bottom: $border;
-          padding-bottom: 0.2rem;
+    #fourth-page {
+      .content-resume {
+        margin-top: 60px;
+        .resume-itens {
+          font-family: $font-text;
+          font-size: $font-size;
+          margin-bottom: 2rem;
         }
-      }
-      .container-date {
-        display: flex;
+        h3 {
+          font-size: 0.95rem;
+          border-bottom: $border ;
+          padding-bottom: 0.5rem;
+        }
+        p, span {
+          font-size: 1.15rem;
+          padding-top: 0.3rem;
+        }
+        .container-date {
+          display: flex;
+        }
       }
     }
   }
@@ -258,10 +264,9 @@
 }
 .heart::after {
   content: url(../../img/icons/heart.svg);
-
 }
 
-.pencil::after{
+.pencil::after {
   content: url(../../img/icons/pencil.svg);
   position: relative;
   right: 30px;
@@ -273,6 +278,13 @@
   transition: 0.5s;
 }
 
-.heart-blue::after{
+.heart-blue::after {
   content: url(../../img/icons/heart-blue.svg);
+}
+
+.submit {
+  width: 100px;
+  position: unset;
+  margin-left: auto;
+
 }
