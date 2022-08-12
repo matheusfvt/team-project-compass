@@ -98,7 +98,7 @@
           <span class="input-error" id="git-error"></span>
 
           <!-- Next button second page -->
-          <button class="button-primary next">Next</button>
+          <button type="submit" class="button-primary next">Next</button>
         </form>
 
         <form class="page" id="third-page">
@@ -136,30 +136,60 @@
           <span class="input-error" id="graduation-error"></span>
 
           <!-- Finish button -->
-          <button class="button-primary finish">
+          <button type="submit" class="button-primary finish">
             <span class="icon"><i class="check"></i></span>Finish
           </button>
         </form>
 
         <div class="page" id="fourth-page">
           <ul class="content-resume">
-            <li class="resume-itens" id="resume-name"></li>
-            <li class="resume-itens" id="resume-nickname"></li>
-            <li class="resume-itens" id="resume-email"></li>
-            <li class="resume-itens" id="resume-phone">your number: </li>
-            <div class="container-date">
-              <li class="resume-itens" id="resume-day">your birthday: </li>
-              <li class="resume-itens" id="resume-month">/</li>
-              <li class="resume-itens" id="resume-year">/</li>
-            </div>
-            <li class="resume-itens" id="resume-linkedin"></li>
-            <li class="resume-itens" id="resume-github"></li>
-            <li id="resume-institution"></li>
-            <li id="resume-graduation"></li>
-            <li id="resume-teamName"></li>
-          </li>
+            <li class="resume-itens">
+              <h3>Full name</h3>
+              <p id="resume-name"></p>
+            </li>
+            <li class="resume-itens">
+              <h3>Nickname</h3>
+              <p id="resume-nickname"></p>
+            </li>
+            <li class="resume-itens">
+              <h3>Email</h3>
+              <p id="resume-email"></p>
+            </li>
+            <li class="resume-itens">
+              <h3>Phone</h3>
+              <p id="resume-phone"></p>
+            </li>
+            <li class="resume-itens">
+              <h3>Your Birthday</h3>
+              <div class="container-date">
+                <span id="resume-day"></span>
+                <span id="resume-month">/</span>
+                <span id="resume-year">/</span>
+              </div>
+            </li>
+            
+            <li class="resume-itens">
+              <h3>Linkedin</h3>
+              <p id="resume-linkedin"></p>
+            </li>
+            <li class="resume-itens">
+              <h3>Github</h3>
+              <p id="resume-github"></p>
+            </li>
+            <li class="resume-itens">
+              <h3>Institution</h3>
+              <p id="resume-institution"></p>
+            </li>
+            <li class="resume-itens">
+              <h3>Graduation</h3>
+              <p id="resume-graduation"></p>
+            </li>
+            <li class="resume-itens">
+              <h3>Team Name</h3>
+              <p id="resume-teamName"></p>
+            </li>
+          </ul>
         </div>
-
     </section>
 
     <script src="script/puxa-dados.js" defer></script>

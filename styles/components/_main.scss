@@ -5,7 +5,7 @@
   min-height: 760px;
   position: relative;
   #first-page{
-    display: block;
+    display: none;
   }
   #second-page{
     display: none;
@@ -14,8 +14,8 @@
     display: none;
   }
   #fourth-page {
-    display: none;
-    height: 500px;
+    display: block;
+    // height: 500px;
   }
   .container__box {
     padding: 2.5rem 3.125rem;
@@ -150,22 +150,20 @@
     }
 
     .content-resume {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      li {
-        list-style: none;
-      }
-      .li-resume {
-        font-family: 'Nunito';
+      .resume-itens {
+        font-family: $font-text;
         font-size: $font-size;
-        list-style: none;
+        margin-bottom: 2rem;
+        h3{
+          font-size: 1.5rem;
+          border-bottom: $border;
+          padding-bottom: 0.2rem;
+        }
       }
       .container-date {
         display: flex;
       }
     }
-
   }
 }
 

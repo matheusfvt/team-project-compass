@@ -255,10 +255,18 @@ function validateThirdForm(){
     return false;
   } else{
     TformError.innerHTML = '';
-    showFirstPage();
+    showFourthPage();
     return true;
   }
 }
+
+//SUBMIT FUNCTION OF THIRD FORM
+
+var page3 = document.getElementById("third-page");
+page3.addEventListener('submit', (event)=>{
+  event.preventDefault();
+  validateThirdForm();
+});
 
 
 

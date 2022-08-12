@@ -2,12 +2,19 @@ var listaCertificados = document.getElementById("certificates-list");
 var moreButton = document.querySelector(".more");
 var cert = document.querySelector("#info-certificates");
 const certificatesError = document.getElementById("certificates-error");
+var j = 0;
+var heartIndex = [];
+var heartfull;
 
 moreButton.addEventListener("click", (event) => {
   event.preventDefault();
   if (validateCertificate()) {
-    createCertificate();
+    heartIndex = [];
+    console.log(j);
+    j++;
+    // createCertificate(hear);
   }
+  console.log(j);
 });
 
 function validateCertificate() {
@@ -23,7 +30,7 @@ function validateCertificate() {
   return true;
 }
 
-function createCertificate() {
+function createCertificate(index) {
   var certificateLi = document.createElement("li");
   certificateLi.classList.add("form-input");
   certificateLi.classList.add("certificate-li");
@@ -68,13 +75,13 @@ function createCertificate() {
     if (heart.classList.contains("heart")) {
       heart.classList.remove("heart");
       heart.classList.add("heart-blue");
-      heartIndex = 1;
+      heartfull = 1;
     } else {
       heart.classList.remove("heart-blue");
       heart.classList.add("heart");
-      heartIndex = 0;
+      heartfull = 0;
     }
-    console.log(heartIndex);
+    console.log(heartfull);
   });
 
   certificateLi.appendChild(input);

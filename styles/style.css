@@ -17,7 +17,7 @@ html, body {
   position: relative;
 }
 #container #first-page {
-  display: block;
+  display: none;
 }
 #container #second-page {
   display: none;
@@ -26,8 +26,7 @@ html, body {
   display: none;
 }
 #container #fourth-page {
-  display: none;
-  height: 500px;
+  display: block;
 }
 #container .container__box {
   padding: 2.5rem 3.125rem;
@@ -149,18 +148,15 @@ html, body {
 #container .container__box .container__page__checkbox .checkbox-label {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-#container .container__box .content-resume {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-#container .container__box .content-resume li {
-  list-style: none;
-}
-#container .container__box .content-resume .li-resume {
-  font-family: "Nunito";
+#container .container__box .content-resume .resume-itens {
+  font-family: "Nunito", sans-serif;
   font-size: 16px;
-  list-style: none;
+  margin-bottom: 2rem;
+}
+#container .container__box .content-resume .resume-itens h3 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #AAAAAA;
+  padding-bottom: 0.2rem;
 }
 #container .container__box .content-resume .container-date {
   display: flex;
