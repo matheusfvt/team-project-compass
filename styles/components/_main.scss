@@ -5,13 +5,13 @@
   min-height: 760px;
   position: relative;
   #first-page{
-    display: block;
+    display: none;
   }
   #second-page{
     display: none;
   }
   #third-page{
-    display: none;
+    display: block;
   }
   .container__box {
     padding: 2.5rem 3.125rem;
@@ -72,6 +72,12 @@
       font-size: 1rem;
     }
 
+    .input-certificate{
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      
+     
+    }
     .input-error {
       color: red;
       font-size: 0.9rem;
@@ -222,12 +228,10 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 #info-certificates {
   display: block;
   width: 100%;
-  line-height: 30px;
 }
 .icon {
   position: absolute;
@@ -242,4 +246,17 @@
 }
 .heart::after {
   content: url(../../img/icons/heart.svg);
+}
+
+.pencil::after{
+  content: url(../../img/icons/pencil.svg);
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.heart-full{
+  fill: blue;
 }

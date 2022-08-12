@@ -24,28 +24,28 @@
           <button class="button" id="button-certificates">Certificates</button>
         </div>
         <!-- page1 -->
-        <form class="page active" id="first-page">
+        <form class="page" id="first-page">
           <span class="input-error" id="first-form-error"></span>
           <!-- Full name input -->
           <label class="input-label" for="info-name">Full Name *</label>
-          <input type="text" class="input full" id="info-name" placeholder="Foo Bar" onkeyup="validateName()"/>
+          <input type="text" class="input" id="info-name" placeholder="Foo Bar" onkeyup="validateName()" />
           <span class="input-error" id="name-error"></span>
 
           <!-- Nickname input -->
           <label class="input-label" for="info-nickname">Nickname</label>
-          <input type="text" class="input full" id="info-nickname" placeholder="Juanito" onkeyup="validateNick()"/>
+          <input type="text" class="input" id="info-nickname" placeholder="Juanito" onkeyup="validateNick()" />
           <span class="input-error" id="nickname-error"></span>
 
           <!-- Email and phone inputs -->
           <div class="container__phone-email">
             <div class="container__email">
               <label class="input-label" for="info-email">Email *</label>
-              <input type="email" class="input" id="info-email" placeholder="foo@bar.com" onkeyup="validateEmail()"/>
+              <input type="email" class="input" id="info-email" placeholder="foo@bar.com" onkeyup="validateEmail()" />
               <span class="input-error" id="email-error"></span>
             </div>
             <div class="container__phone">
               <label class="input-label" for="info-phone">Phone</label>
-              <input type="tel" class="input" id="info-phone" placeholder="(83) 00000-0000" onkeyup="validatePhone()"/>
+              <input type="tel" class="input" id="info-phone" placeholder="(83) 00000-0000" onkeyup="validatePhone()" />
               <span class="input-error" id="phone-error"></span>
             </div>
           </div>
@@ -74,7 +74,7 @@
 
           <!-- Checkbox input -->
           <div class="container__page__checkbox">
-            <input type="checkbox" id="page__checkbox" onchange="validateCheckbox()"/>
+            <input type="checkbox" id="page__checkbox" onchange="validateCheckbox()" />
             <label for="page__checkbox" class="checkbox-label">I accept the terms and privacy</label>
           </div>
           <span class="input-error" id="checkbox-error"></span>
@@ -88,49 +88,61 @@
           <span class="input-error" id="second-form-error"></span>
           <!-- Linkedin input -->
           <label class="input-label" for="info-linkedin">LinkedIn</label>
-          <input type="url" class="input full" id="info-linkedin" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" onkeyup="validateLinkedin()" />
+          <input type="url" class="input" id="info-linkedin" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" onkeyup="validateLinkedin()" />
           <span class="input-error" id="linkedin-error"></span>
 
           <!-- Github input -->
           <label class="input-label" for="info-github">Github *</label>
-          <input type="" class="input full" id="info-github" placeholder="https://github.com/foobar" onkeyup="validateGit()"/>
+          <input type="" class="input" id="info-github" placeholder="https://github.com/foobar" onkeyup="validateGit()" />
           <span class="input-error" id="git-error"></span>
 
           <!-- Next button second page -->
           <button class="button-primary next">Next</button>
         </form>
 
-        <div class="page" id="third-page">
+        <form class="page" id="third-page">
+          <span class="input-error" id="third-form-error"></span>
           <!-- Certificates input -->
           <label class="input-label" for="info-certificates">Cerficates</label>
           <div class="form-input">
-            <input type="url" class="input full" id="info-certificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" />
-            <span class="icon"><i class="heart"></i></span>
+            <input type="url" class="input" id="info-certificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"/>
+            <span class="icon"><i class="pencil"></i></span>
           </div>
+          <span class="input-error" id="certificates-error"></span>
+          <ul id="certificates-list">
+            <!-- <li class="input form-input input-certificate">
+              <p>ergerg</p>
+              <span class="icon"><i class="heart"></i></span>
+            </li> -->
+          </ul>
           <!-- More button -->
           <button class="button-primary more" id="">More</button>
 
           <!-- Team name input -->
           <label class="input-label" for="info-teamName">Team Name *</label>
-          <input type="text" class="input full" id="info-teamName" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" />
+          <input type="text" class="input" id="info-teamName" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" onkeyup="validateTeamName()" />
+          <span class="input-error" id="teamName-error"></span>
 
           <!-- Institution input -->
           <label class="input-label" for="info-institution">Institution *</label>
-          <input type="text" class="input full" id="info-institution" placeholder="Federal University of Paraiba" />
+          <input type="text" class="input" id="info-institution" placeholder="Federal University of Paraiba" onkeyup="validateInstitution()" />
+          <span class="input-error" id="instituition-error"></span>
 
           <!-- Graduation input -->
           <label class="input-label" for="info-graduation">Graduation *</label>
-          <input type="text" class="input full" id="info-graduation" placeholder="Computer Science" />
+          <input type="text" class="input" id="info-graduation" placeholder="Computer Science" onkeyup="validateGraduation()" />
+          <span class="input-error" id="graduation-error"></span>
 
           <!-- Finish button -->
           <button class="button-primary finish">
             <span class="icon"><i class="check"></i></span>Finish
           </button>
-        </div>
+        </form>
       </div>
     </section>
-    <script  src="./script/data.js" defer></script>
+    <script src="./script/data.js" defer></script>
     <script src="./script/redirect-page.js" defer></script>
     <script src="./script/validando-form.js" defer></script>
+    <script src="./script/create-certificate.js" defer></script>
   </body>
 </html>

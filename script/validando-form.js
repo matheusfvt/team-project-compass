@@ -137,13 +137,15 @@ function validateFirstForm() {
   }
 }
 
-//FUNÇÃO DE SUBMIT DO PRIMEIRO FORM
+//SUBMIT FUNCTION OF FIRST FORM
 
 var page1 = document.getElementById("first-page");
 page1.addEventListener('submit', (event)=>{
   event.preventDefault();
   validateFirstForm();
 });
+
+//VARIABLES FOR SECOND FORM
 
 const linkedinError = document.getElementById("linkedin-error");
 const gitError = document.getElementById("git-error");
@@ -197,13 +199,66 @@ function validateSecondForm() {
   }
 }
 
-//FUNÇÃO DE SUBMIT DO PRIMEIRO FORM
+//SUBMIT FUNCTION OF SECOND FORM
 
 var page2 = document.getElementById("second-page");
 page2.addEventListener('submit', (event)=>{
   event.preventDefault();
   validateSecondForm();
 });
+
+//VARIABLES FOR THIRD FORM
+
+const TnameError = document.getElementById("checkbox-error");
+const institutionError = document.getElementById("checkbox-error");
+const graduationError = document.getElementById("checkbox-error");
+const TformError = document.getElementsByClassName("third-form-error");
+
+//VALIDATION FUNCTIONS FOR FIRST FORM
+
+function validateCertificate(){
+  var cert = document.querySelector('#info-certificates').value;
+
+}
+
+
+
+function validateTeamName(){
+  var team = document.querySelector('#info-teamName').value;
+
+  if (team.length == 0 || team == null || team == "") {
+    TnameError.innerHTML = "Team name cannot be blank";
+    return false;
+  }
+  TnameError.innerHTML = '';
+  return true;
+}
+
+function validateInstitution(){
+  var institution = document.querySelector('#info-institution').value;
+
+  if (institution.length == 0 || institution == null || institution == "") {
+    institutionError.innerHTML = "Institution cannot be blank";
+    return false;
+  }
+  institutionError.innerHTML = '';
+  return true;
+}
+
+function validateGraduation(){
+  var graduation = document.querySelector('#info-graduation').value;
+
+  if (graduation.length == 0 || graduation == null || graduation == "") {
+    graduationError.innerHTML = "Graduation cannot be blank";
+    return false;
+  }
+  graduationError.innerHTML = '';
+  return true;
+}
+
+
+
+
 
 
 

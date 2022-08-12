@@ -17,13 +17,13 @@ html, body {
   position: relative;
 }
 #container #first-page {
-  display: block;
+  display: none;
 }
 #container #second-page {
   display: none;
 }
 #container #third-page {
-  display: none;
+  display: block;
 }
 #container .container__box {
   padding: 2.5rem 3.125rem;
@@ -75,6 +75,10 @@ html, body {
   border-radius: 4px;
   width: 100%;
   box-sizing: border-box;
+  font-size: 1rem;
+}
+#container .container__box .input-certificate {
+  margin-top: 0.5rem;
   font-size: 1rem;
 }
 #container .container__box .input-error {
@@ -207,13 +211,11 @@ html, body {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 #info-certificates {
   display: block;
   width: 100%;
-  line-height: 30px;
 }
 
 .icon {
@@ -228,4 +230,17 @@ html, body {
 
 .heart::after {
   content: url(../../img/icons/heart.svg);
+}
+
+.pencil::after {
+  content: url(../../img/icons/pencil.svg);
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.heart-full {
+  fill: blue;
 }/*# sourceMappingURL=style.css.map */
