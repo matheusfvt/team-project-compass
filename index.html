@@ -18,6 +18,8 @@
     <script src="./script/redirect-page.js" defer></script>
     <script src="./script/validando-form.js" defer></script>
     <script src="./script/create-certificate.js" defer></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
 
   <body>
@@ -112,7 +114,7 @@
           <!-- Certificates input -->
           <label class="input-label" for="info-certificates">Cerficates</label>
           <div class="form-input">
-            <input type="text" class="input" id="info-certificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"/>
+            <input type="text" class="input" id="info-certificates" placeholder="Compass certificate"/>
             <span class="icon"><i class="heart"></i></span>
           </div>
           <span class="input-error" id="certificates-error"></span>
@@ -128,7 +130,7 @@
 
           <!-- Team name input -->
           <label class="input-label" for="info-teamName">Team Name *</label>
-          <input type="text" class="input" id="info-teamName" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" onkeyup="validateTeamName()" />
+          <input type="text" class="input" id="info-teamName" placeholder="Group 1" onkeyup="validateTeamName()" />
           <span class="input-error" id="teamName-error"></span>
 
           <!-- Institution input -->
@@ -207,5 +209,7 @@
           <button onclick="resetButton()" class="button-primary next reset">Reset</button>
         </div>
     </section>
+
+    
   </body>
 </html>

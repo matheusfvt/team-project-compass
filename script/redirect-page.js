@@ -51,7 +51,13 @@ function showThirdPage() {
   flagThird = true;
 }
 
+
 function showFourthPage(){
+  Swal.fire(
+    'success!',
+    'Your form has been sent successfully.',
+    'success'
+  )
   resetPages();
   containerNav.style.display = 'none';
   pageTitle.style.display = 'none';
@@ -66,6 +72,7 @@ function showFourthPage(){
 //   }
 // }
 
+
 // function ctButton(){
 //   if(flagThird == true){
 //     showThirdPage();
@@ -76,7 +83,6 @@ function showFourthPage(){
 
 function resetButton(){
   window.localStorage.clear();
-  document.querySelectorAll('certificate-li').style.display = 'none';
   page1.reset();
   page2.reset();
   page3.reset();
