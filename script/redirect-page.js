@@ -51,12 +51,19 @@ function showThirdPage() {
   flagThird = true;
 }
 
+
 function showFourthPage(){
+  Swal.fire(
+    'success!',
+    'Your form has been sent successfully.',
+    'success'
+  )
   resetPages();
   containerNav.style.display = 'none';
   pageTitle.style.display = 'none';
   page4.style.display = 'block';
 }
+
 
 function scButton(){
   if(flagSecond == true){
