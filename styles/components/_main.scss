@@ -15,7 +15,6 @@
   }
   #fourth-page {
     display: none;
-    height: 500px;
   }
   .container__box {
     padding: 2.5rem 3.125rem;
@@ -152,7 +151,9 @@
     .content-resume {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 25px;
+
+      margin-top: 40px;
       li {
         list-style: none;
       }
@@ -261,6 +262,7 @@
 }
 .heart::after {
   content: url(../../img/icons/heart.svg);
+
 }
 
 .pencil::after{

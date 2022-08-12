@@ -255,16 +255,7 @@ function validateThirdForm(){
     return false;
   } else{
     TformError.innerHTML = '';
-    showFirstPage();
+    showfourthPage();
     return true;
   }
 }
-
-
-
-
-
-
-
-
-
