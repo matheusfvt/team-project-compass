@@ -12,7 +12,6 @@ var page3 = document.getElementById("third-page");
 
 
 function resetPages() {
-  console.log('testando reset pages');
   page1.style.display = 'none';
   page2.style.display = 'none';
   page3.style.display = 'none';

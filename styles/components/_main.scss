@@ -13,6 +13,10 @@
   #third-page{
     display: none;
   }
+  #fourth-page {
+    display: none;
+    height: 500px;
+  }
   .container__box {
     padding: 2.5rem 3.125rem;
     .container__title {
@@ -144,6 +148,24 @@
         text-shadow: $shadow;
       }
     }
+
+    .content-resume {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      li {
+        list-style: none;
+      }
+      .li-resume {
+        font-family: 'Nunito';
+        font-size: $font-size;
+        list-style: none;
+      }
+      .container-date {
+        display: flex;
+      }
+    }
+
   }
 }
 
