@@ -8,7 +8,6 @@ moreButton.addEventListener("click", (event) => {
   if (validateCertificate()) {
     createCertificate();
   }
-
 });
 
 function validateCertificate() {
@@ -63,15 +62,20 @@ function createCertificate(index) {
   });
 
   //CLICA NO CORACAO VIRA AZUL
-  heart.addEventListener("click", () => {
-    console.log("clickado coracao");
-
-    if (heart.classList.contains("heart")) {
+  heart.addEventListener("click", (el) => {
+    certList = el.target.parentNode.parentNode;
+    var allHeartBlue = document.querySelectorAll('.heart-blue');
+    console.log(allHeartBlue.length);
+    if (!heart.classList.contains("heart-blue") && allHeartBlue.length < 2) {
       heart.classList.remove("heart");
       heart.classList.add("heart-blue");
+      certList.style.order = "-1";
+      
     } else {
       heart.classList.remove("heart-blue");
       heart.classList.add("heart");
+      certList.style.order = "unset";
+
     }
   });
 

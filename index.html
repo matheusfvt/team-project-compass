@@ -27,8 +27,8 @@
         <!-- top navigation -->
         <div class="container__navigation">
           <button class="button bto-active" id="button-basic" onclick="showFirstPage()">Basic</button>
-          <button class="button" id="button-social" onclick="scButton()">Social</button>
-          <button class="button" id="button-certificates" onclick="ctButton()">Certificates</button>
+          <button class="button" id="button-social" disabled onclick="showSecondPage()">Social</button>
+          <button class="button" id="button-certificates" disabled onclick="showThirdPage()">Certificates</button>
         </div>
         <!-- page1 -->
         <form class="page" id="first-page" onchange="validateFirstButton()">
@@ -95,12 +95,12 @@
           <span class="input-error" id="second-form-error"></span>
           <!-- Linkedin input -->
           <label class="input-label" for="info-linkedin">LinkedIn</label>
-          <input type="url" class="input" id="info-linkedin" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" onkeyup="validateLinkedin()" />
+          <input type="text" class="input" id="info-linkedin" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" onkeyup="validateLinkedin()" />
           <span class="input-error" id="linkedin-error"></span>
 
           <!-- Github input -->
           <label class="input-label" for="info-github">Github *</label>
-          <input type="" class="input" id="info-github" placeholder="https://github.com/foobar" onkeyup="validateGit()" />
+          <input type="text" class="input" id="info-github" placeholder="https://github.com/foobar" onkeyup="validateGit()" />
           <span class="input-error" id="git-error"></span>
 
           <!-- Next button second page -->

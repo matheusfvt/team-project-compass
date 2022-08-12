@@ -30,12 +30,12 @@ function resetPages() {
 
 function showFirstPage() {
   resetPages();
-  pageTitle.style.display = 'unset';
+  pageTitle.style.display = 'block';
   buttonB.classList.add('bto-active');
   page1.style.display = 'block';
 }
 
-var flagSecond = false;
+// var flagSecond = false;
 function showSecondPage() {
   resetPages();
   buttonS.classList.add('bto-active');
@@ -43,7 +43,7 @@ function showSecondPage() {
   flagSecond = true;
 }
 
-var flagThird = false;
+// var flagThird = false;
 function showThirdPage() {
   resetPages();
   buttonC.classList.add('bto-active');
@@ -58,24 +58,25 @@ function showFourthPage(){
   page4.style.display = 'block';
 }
 
-function scButton(){
-  if(flagSecond == true){
-    showSecondPage();
-  } else{
-    return validateFirstForm();
-  }
-}
+// function scButton(){
+//   if(flagSecond == true){
+//     showSecondPage();
+//   } else{
+//     return validateFirstForm();
+//   }
+// }
 
-function ctButton(){
-  if(flagThird == true){
-    showThirdPage();
-  } else{
-    return validateSecondForm();
-  }
-}
+// function ctButton(){
+//   if(flagThird == true){
+//     showThirdPage();
+//   } else{
+//     return validateSecondForm();
+//   }
+// }
 
 function resetButton(){
   window.localStorage.clear();
+  document.querySelectorAll('certificate-li').style.display = 'none';
   page1.reset();
   page2.reset();
   page3.reset();

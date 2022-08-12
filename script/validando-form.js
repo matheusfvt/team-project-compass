@@ -138,16 +138,18 @@ function validateFirstButton() {
     phoneError.innerHTML = '';
     birthError.innerHTML = '';
     checkboxError.innerHTML = '';
-    FformError.innerHTML = '';
+    FformError.innerHTML = ""
     if (!firstNext.classList.contains("button-primary-disabled")) {
       firstNext.classList.add("button-primary-disabled");
       firstNext.classList.add("next-disabled");
     }
+    document.getElementById('button-social').disabled = true;
     return false;
   } else {
     FformError.innerHTML = "";
     firstNext.classList.remove("button-primary-disabled");
     firstNext.classList.remove("next-disabled");
+    document.getElementById('button-social').disabled = false;
     return true;
   }
 }
@@ -191,7 +193,7 @@ function validateLinkedin() {
   }
 
   if (linkedin.length !== 0 && !linkedin.match(/^(http(s)?:\/\/)?([\w]+\.)?linkedin\.com\/(pub|in|profile)/gm)) {
-    linkedinError.innerHTML = "Your link is not valid Linkedin url";
+    linkedinError.innerHTML = "Your link is valid but not a Linkedin url";
     return false;
   }
 
@@ -208,7 +210,7 @@ function validateGit() {
   }
 
   if (!git.match(/^(https?:\/\/)?(www\.)?github\.com\/[a-zA-Z0-9_]{1,25}$/gim)) {
-    gitError.innerHTML = "Your link is not a Github url";
+    gitError.innerHTML = "Your link is valid but not a Github url";
     return false;
   }
 
@@ -224,16 +226,18 @@ function validateSecondButton() {
   if (!validateSecondForm()) {
     linkedinError.innerHTML = '';
     gitError.innerHTML = '';
-    SformError.innerHTML = '';
+    SformError.innerHTML = "";
     if (!secondNext.classList.contains("button-primary-disabled")) {
       secondNext.classList.add("button-primary-disabled");
       secondNext.classList.add("next-disabled");
     }
+    document.getElementById('button-certificates').disabled = true;
     return false;
   } else {
     SformError.innerHTML = "";
     secondNext.classList.remove("button-primary-disabled");
     secondNext.classList.remove("next-disabled");
+    document.getElementById('button-certificates').disabled = false;
     return true;
   }
 }
@@ -311,7 +315,7 @@ function validateThirdButton() {
     institutionError.innerHTML = '';
     TnameError.innerHTML = '';
     graduationError.innerHTML = '';
-    TformError.innerHTML = '';
+    TformError.innerHTML = "";
     if (!thirdFinish.classList.contains("button-primary-disabled")) {
       thirdFinish.classList.add("button-primary-disabled");
       thirdFinish.classList.add("finish-disabled");

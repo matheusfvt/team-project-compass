@@ -269,6 +269,11 @@
   text-align: center;
 }
 
+#certificates-list{
+  display: flex;
+  flex-direction: column;
+}
+
 /*==== heart certificates =====*/
 
 .form-input {
