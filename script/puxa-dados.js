@@ -76,7 +76,29 @@ if (localStorage.graduation) {
   document.getElementById("info-graduation").value = "";
 }
 
+var thirdPage = document.getElementById("third-page");
+
+var certicateLista = document.getElementById("certificates-list");
+
+var arrayCertificates = [];
+
+var certificates1;
+
+thirdPage.onsubmit = function(){
+  var tester = document.querySelectorAll(".input-certificate");
+
+  for(let i =0; i < tester.length; i++) {
+    arrayCertificates[i] = tester[i].value;
+
+  }
+
+  certificates1 = arrayCertificates.join('');
+  // console.log(arrayCertificates);
+  // console.log(certificates1);
+}
+
 var saveDados = function () {
+
   var name = document.getElementById("info-name").value;
   var nickname = document.getElementById("info-nickname").value;
   var email = document.getElementById("info-email").value;
@@ -97,6 +119,8 @@ var saveDados = function () {
   var institution = document.getElementById("info-institution").value;
   var graduation = document.getElementById("info-graduation").value;
 
+  //const arrayCertificates[] = document.getElementById("info-certificates").value;
+
   localStorage.setItem("name", name);
   localStorage.setItem("nickname", nickname);
   localStorage.setItem("email", email);
@@ -110,7 +134,10 @@ var saveDados = function () {
   localStorage.setItem("institution", institution);
   localStorage.setItem("graduation", graduation);
   localStorage.setItem("teamName", teamName);
-  
+
+  localStorage.setItem("arrayCertificates", certificates1);
+
+  console.log(certificates1);
 };
 
 document.onchange = saveDados;
@@ -119,15 +146,14 @@ document.getElementById("resume-name").innerHTML += localStorage.getItem("name")
 document.getElementById("resume-nickname").innerHTML += localStorage.getItem("nickname");
 document.getElementById("resume-email").innerHTML += localStorage.getItem("email");
 document.getElementById("resume-phone").innerHTML += localStorage.getItem("phone");
-
 document.getElementById("resume-day").innerHTML += localStorage.getItem("day");
 document.getElementById("resume-month").innerHTML += localStorage.getItem("month");
 document.getElementById("resume-year").innerHTML += localStorage.getItem("year");
-
 document.getElementById("resume-linkedin").innerHTML += localStorage.getItem("linkedin");
 document.getElementById("resume-github").innerHTML += localStorage.getItem("github");
-
 document.getElementById("resume-institution").innerHTML += localStorage.getItem("institution");
 document.getElementById("resume-graduation").innerHTML += localStorage.getItem("graduation");
 document.getElementById("resume-teamName").innerHTML += localStorage.getItem("teamName");
+document.getElementById("resume-certificates").innerHTML += localStorage.getItem("certificates1");
+
 
