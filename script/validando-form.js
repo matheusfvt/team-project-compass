@@ -270,9 +270,3 @@ page3.addEventListener('submit', (event)=>{
 
 
 
-
-
-
-
-
-

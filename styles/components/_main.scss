@@ -5,7 +5,7 @@
   min-height: 760px;
   position: relative;
   #first-page{
-    display: none;
+    display: block;
   }
   #second-page{
     display: none;
@@ -14,8 +14,7 @@
     display: none;
   }
   #fourth-page {
-    display: block;
-    // height: 500px;
+    display: none;
   }
   .container__box {
     padding: 2.5rem 3.125rem;
@@ -259,6 +258,7 @@
 }
 .heart::after {
   content: url(../../img/icons/heart.svg);
+
 }
 
 .pencil::after{
